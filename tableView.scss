@@ -1,0 +1,52 @@
+.mat-form-field {
+  margin-right: 15px;
+}
+
+.input-text {
+  font-size: medium;
+}
+
+table {
+  text-align: left;
+  position: relative;
+}
+
+.table-title {
+  font-size: 20px;
+}
+th {
+  background: white;
+  position: sticky;
+  top:0;
+}
+
+td:hover {
+  background-color: lightblue;
+}
+
+.selected {
+  background-color: skyblue;
+}
+
+.table-layout {
+  display: inline-grid;
+  padding: 15px;
+}
+
+.row-layout {
+  height: 300px;
+  overflow: scroll;
+  width: 265px;
+  background-color: lightgray;
+  border: 1px solid lightgray;
+  overflow-x: hidden;
+}
+
+button {
+  background-color: #0072ce;
+}
+
+.edit-button {
+  float: right;
+  padding: 5px;
+}
