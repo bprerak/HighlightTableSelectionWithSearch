@@ -1,0 +1,29 @@
+<div class="row-layout">
+      <div>
+        <table mat-table [dataSource]="vehicleTypes.dataSource" class="mat-elevation-z8">
+          <ng-container matColumnDef="VEHTYPE">
+            <th mat-header-cell *matHeaderCellDef>
+              <mat-form-field style="width: 265px" appearance="standard">
+                <input matInput (keyup)="dataFilter($event, vehicleTypes)" placeholder="Ex. Car" class="input-text">
+                <mat-icon matPrefix>search</mat-icon>
+              </mat-form-field>
+            </th>
+            <td (click)="highlightUpdateVehicleType=element.VEHTYPE; resetSelectionAndBelow(vehicleTypes.searchAttribute);
+                setVehicleType(highlightUpdateVehicleType)"
+                mat-cell *matCellDef="let element"
+                [ngClass]="{'selected': element.VEHTYPE === highlightUpdateVehicleType}">
+              {{element.VEHTYPE}}
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="vehicleTypes.displayedColumn"></tr>
+          <tr mat-row *matRowDef="let row; columns: vehicleTypes.displayedColumn;"
+              (click)="highlightUpdateVehicleType = highlightUpdateVehicleType === row ? null : row.VEHTYPE"
+              [ngClass]="{ 'selected': row === highlightUpdateVehicleType }">
+          </tr>
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">No data matching the filter.</td>
+          </tr>
+        </table>
+      </div>
+    </div>
